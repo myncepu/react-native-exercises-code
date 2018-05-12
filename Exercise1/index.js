@@ -4,8 +4,10 @@ import { View, StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'gray',
-    width: '100%',
-    height: '100%',
+    // width: '100%',
+    // height: '100%',
+    // 直接写flex: 1就可以让组件占满父组件！
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
