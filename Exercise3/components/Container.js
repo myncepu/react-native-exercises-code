@@ -1,5 +1,11 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  StatusBar,
+  KeyboardAvoidingView,
+} from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const styles = StyleSheet.create({
   container: {
@@ -9,8 +15,19 @@ const styles = StyleSheet.create({
 });
 
 export const Container = ({ children }) => (
+  // 1. KeyboardAvoidingView
   <SafeAreaView style={styles.container}>
     <StatusBar barStyle="light-content" />
-    {children}
+    <KeyboardAvoidingView behavior="position" enabled keyboardVerticalOffset={50}>
+      {children}
+    </KeyboardAvoidingView>
   </SafeAreaView>
+
+  // 2. KeyboardAwareScrollView
+  // <SafeAreaView style={styles.container}>
+  //   <KeyboardAwareScrollView>
+  //     <StatusBar barStyle="light-content" />
+  //     {children}
+  //   </KeyboardAwareScrollView>
+  // </SafeAreaView>
 );
